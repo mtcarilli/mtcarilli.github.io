@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=research-columns">
 </head>
 <body>
 
@@ -41,34 +41,41 @@
 
   <div class="nav-mobile" aria-hidden="true"></div>
 
-  <main class="main">
+  <main class="main main--research">
     <h1 class="projects-title">Research</h1>
 
-    <div class="project-list">
-      <article class="project-item reveal">
-        <span class="project-year">2026</span>
-        <div class="project-name">
-          <span class="project-name-title">Current Research</span>
-        </div>
-        <div class="project-info">
-          <span class="project-info-desc">A short description of your current academic work.</span>
-          <span class="project-info-tags">Topic, method, lab or field</span>
-        </div>
-      </article>
+    <section class="research-card-grid" aria-label="Research areas">
+      <a class="research-card reveal" href="research/machine-learning-mechanistic-inference.html">
+        <img src="assets/img/research-mechanistic.jpg" alt="" onerror="this.hidden=true">
+        <span>Machine Learning for Mechanistic Inference</span>
+      </a>
 
-      <article class="project-item reveal">
-        <span class="project-year">2025</span>
-        <div class="project-name">
-          <span class="project-name-title">Selected Paper or Project</span>
+      <a class="research-card reveal" href="research/gene-expression-regulation.html">
+        <img src="assets/img/research-regulation.jpg" alt="" onerror="this.hidden=true">
+        <span>Gene Expression Regulation</span>
+      </a>
+
+      <a class="research-card reveal" href="research/dimensionality-reduction.html">
+        <img src="assets/img/research-dimension.jpg" alt="" onerror="this.hidden=true">
+        <span>Dimensionality Reduction</span>
+      </a>
+    </section>
+
+    <section class="software-section reveal" aria-labelledby="software-title">
+      <h2 id="software-title">Open-Source Software</h2>
+      <div class="software-links">
+        <a class="software-button" href="https://github.com/pachterlab/CGCCP_2023" target="_blank" rel="noopener">biVI</a>
+        <a class="software-button" href="https://github.com/pachterlab/rhopca/" target="_blank" rel="noopener">rhoPCA</a>
+        <div class="software-button software-button--split" aria-label="XgeneR and XgenePy repositories">
+          <a href="https://github.com/pachterlab/XgeneR" target="_blank" rel="noopener">XgeneR</a>
+          <span>/</span>
+          <a href="https://github.com/pachterlab/XgenePy" target="_blank" rel="noopener">XgenePy</a>
         </div>
-        <div class="project-info">
-          <span class="project-info-desc">Add a paper, thesis, poster, talk, or research project here.</span>
-          <span class="project-info-tags">Publication, conference, manuscript</span>
-        </div>
-      </article>
-    </div>
+        <a class="software-button" href="https://github.com/pachterlab/monod" target="_blank" rel="noopener">Monod (contributing)</a>
+      </div>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=runner-large"></script>
 </body>
 </html>

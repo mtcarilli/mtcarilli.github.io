@@ -507,31 +507,31 @@ function initVanillaBadge() {
   badge.innerHTML =
     '<a class="badge-link" href="mailto:miacarilli@gmail.com" aria-label="Email Maria Carilli">' +
       '<span>email</span>' +
-      '<svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>' +
+      '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>' +
     '</a>' +
     '<span class="badge-sep">&bull;</span>' +
     '<a class="badge-link" href="https://www.linkedin.com/in/maria-carilli-21b107190/" target="_blank" rel="noopener" aria-label="Maria Carilli on LinkedIn">' +
       '<span>linkedin</span>' +
-      '<svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.98H3.85v10.17h3.09V8.98ZM5.4 4.85a1.78 1.78 0 1 0 0 3.56 1.78 1.78 0 0 0 0-3.56Zm13.75 8.48c0-2.73-1.46-4-3.4-4-1.57 0-2.27.86-2.66 1.47V8.98h-3.08c.04.97 0 10.17 0 10.17h3.08v-5.68c0-.3.02-.61.11-.82.25-.61.8-1.24 1.74-1.24 1.23 0 1.72.94 1.72 2.31v5.43h3.08v-5.82h-.59Z"/></svg>' +
+      '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.98H3.85v10.17h3.09V8.98ZM5.4 4.85a1.78 1.78 0 1 0 0 3.56 1.78 1.78 0 0 0 0-3.56Zm13.75 8.48c0-2.73-1.46-4-3.4-4-1.57 0-2.27.86-2.66 1.47V8.98h-3.08c.04.97 0 10.17 0 10.17h3.08v-5.68c0-.3.02-.61.11-.82.25-.61.8-1.24 1.74-1.24 1.23 0 1.72.94 1.72 2.31v5.43h3.08v-5.82h-.59Z"/></svg>' +
     '</a>' +
     '<span class="badge-sep">&bull;</span>' +
     '<a class="badge-link" href="https://github.com/mtcarilli" target="_blank" rel="noopener" aria-label="Maria Carilli on GitHub">' +
       '<span>github</span>' +
-      '<svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.22.7-3.9-1.38-3.9-1.38-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.29-5.27-5.72 0-1.26.45-2.3 1.2-3.1-.12-.3-.52-1.48.11-3.07 0 0 .98-.31 3.17 1.18A10.94 10.94 0 0 1 12 6.07c.98 0 1.95.13 2.86.39 2.18-1.49 3.16-1.18 3.16-1.18.64 1.59.24 2.77.12 3.07.75.8 1.2 1.84 1.2 3.1 0 4.45-2.7 5.43-5.28 5.72.42.36.79 1.07.79 2.16v3.01c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>' +
+      '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.22.7-3.9-1.38-3.9-1.38-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.29-5.27-5.72 0-1.26.45-2.3 1.2-3.1-.12-.3-.52-1.48.11-3.07 0 0 .98-.31 3.17 1.18A10.94 10.94 0 0 1 12 6.07c.98 0 1.95.13 2.86.39 2.18-1.49 3.16-1.18 3.16-1.18.64 1.59.24 2.77.12 3.07.75.8 1.2 1.84 1.2 3.1 0 4.45-2.7 5.43-5.28 5.72.42.36.79 1.07.79 2.16v3.01c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>' +
     '</a>';
 
   badge.style.cssText =
     'position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(20px);' +
-    'font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;' +
-    'color:#999;background:rgba(255,255,255,.55);padding:8px 16px;border-radius:6px;' +
+    'font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;' +
+    'color:#999;background:rgba(255,255,255,.55);padding:11px 20px;border-radius:8px;' +
     '-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);' +
     'border:1px solid rgba(0,0,0,.06);' +
-    'pointer-events:auto;white-space:nowrap;display:flex;align-items:center;gap:10px;' +
+    'pointer-events:auto;white-space:nowrap;display:flex;align-items:center;gap:14px;' +
     'transition:all .3s;z-index:1;cursor:default;opacity:0';
 
   badge.querySelectorAll('.badge-link').forEach((link) => {
     link.style.cssText =
-      'display:inline-flex;align-items:center;gap:5px;color:inherit;text-decoration:none;opacity:.7;transition:opacity .2s,color .2s';
+      'display:inline-flex;align-items:center;gap:7px;color:inherit;text-decoration:none;opacity:.7;transition:opacity .2s,color .2s';
     link.addEventListener('mouseenter', () => { link.style.opacity = '1'; link.style.color = 'var(--accent)'; });
     link.addEventListener('mouseleave', () => { link.style.opacity = '.7'; link.style.color = 'inherit'; });
   });
@@ -555,6 +555,24 @@ function initVanillaBadge() {
       ? (isDark ? 'rgba(40,40,40,1)' : 'rgba(255,255,255,1)')
       : (isDark ? 'rgba(40,40,40,.55)' : 'rgba(255,255,255,.55)');
     badge.style.color = hot ? (isDark ? '#fff' : '#000') : '#999';
+  });
+}
+
+/* --- Home Intro Highlight --- */
+
+function initHomeIntroHighlight() {
+  const intro = document.querySelector('.home-intro');
+  if (!intro) return;
+
+  document.addEventListener('mousemove', (e) => {
+    const rect = intro.getBoundingClientRect();
+    const pad = 44;
+    const hot =
+      e.clientX >= rect.left - pad &&
+      e.clientX <= rect.right + pad &&
+      e.clientY >= rect.top - pad &&
+      e.clientY <= rect.bottom + pad;
+    intro.classList.toggle('is-hot', hot);
   });
 }
 
@@ -849,6 +867,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEmailCopy();
   initDesignSystemToggle();
   initVanillaBadge();
+  initHomeIntroHighlight();
   initReadingProgress();
   initStatCounters();
   initCursorTrail();
