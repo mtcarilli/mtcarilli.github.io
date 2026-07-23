@@ -1,16 +1,13 @@
 {
-  "name": "Jane Smith",
-  "name_ru": "Jane Smith",
-  "job": "Product Designer",
-  "job_ru": "Продуктовый дизайнер",
+  "name": "Maria Carilli",
+  "job": "Academic",
   "domain": "example.com",
   "url": "https://example.com",
   "email": "hello@example.com",
-  "telegram": "janesmith",
-  "instagram": "janesmith",
-  "linkedin": "janesmith",
+  "telegram": "mariacarilli",
+  "instagram": "mariacarilli",
+  "linkedin": "mariacarilli",
   "goatcounter": "YOURSITE",
   "location": "Working remotely",
-  "location_ru": "Работаю удалённо",
-  "accent_color": "#F8401C"
+  "accent_color": "#D95B8A"
 }

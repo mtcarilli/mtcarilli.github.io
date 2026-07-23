@@ -122,14 +122,6 @@ function initGoatCounterEvents() {
     });
   });
 
-  /* Language switcher */
-  document.querySelectorAll('.nav-lang a').forEach((el) => {
-    el.addEventListener('click', () => {
-      const lang = el.href.includes('/en/') || el.textContent.trim() === 'En' ? 'en' : 'ru';
-      gc('lang-switch-to-' + lang, 'Language: ' + lang.toUpperCase());
-    });
-  });
-
   /* Contact links on about page */
   document.querySelectorAll('.about-links a').forEach((el) => {
     el.addEventListener('click', () => {
@@ -327,7 +319,6 @@ function initBurger() {
 
 function initTerminal() {
   let el = null;
-  const isRu = !location.pathname.includes('/en/');
   const history = [];
   let historyIdx = -1;
 
@@ -352,22 +343,18 @@ function initTerminal() {
   const commandNames = ['help', 'projects', 'contact', 'skills', 'about', 'fortune', 'sudo', 'clear', 'exit'];
 
   const commands = {
-    help: () => isRu
-      ? 'projects\ncontact\nskills\nabout\nfortune          \u0446\u0438\u0442\u0430\u0442\u0430 \u043e \u0434\u0438\u0437\u0430\u0439\u043d\u0435\nsudo\nclear\nexit'
-      : 'projects\ncontact\nskills\nabout\nfortune          design quote\nsudo\nclear\nexit',
+    help: () => 'projects\ncontact\nskills\nabout\nfortune          design quote\nsudo\nclear\nexit',
     projects: () => 'Project Alpha \u00b7 Project Beta \u00b7 Project Gamma',
     contact: () => 'email: hello@example.com\ntelegram: @janesmith',
     skills: () =>
       'Design:  Product, Brand, UI/UX\nCode:    HTML, CSS, JavaScript',
-    about: () => isRu
-      ? 'Jane Smith \u2014 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432\u044b\u0439 \u0434\u0438\u0437\u0430\u0439\u043d\u0435\u0440.'
-      : 'Jane Smith \u2014 product designer.',
+    about: () => 'Jane Smith \u2014 product designer.',
     fortune: () => {
       if (!commands._fortunePool || !commands._fortunePool.length)
         commands._fortunePool = fortunes.slice().sort(() => Math.random() - 0.5);
       return commands._fortunePool.pop();
     },
-    sudo: () => isRu ? '\u0423 \u0432\u0430\u0441 \u043d\u0435\u0442 \u043f\u0440\u0430\u0432. \u041d\u043e \u0435\u0441\u0442\u044c \u0432\u043a\u0443\u0441.' : 'Permission denied. But you have great taste.',
+    sudo: () => 'Permission denied. But you have great taste.',
     clear: () => '__CLEAR__',
     exit: () => '__EXIT__',
   };
@@ -406,7 +393,7 @@ function initTerminal() {
 
     const input = el.querySelector('#term-input');
     const output = el.querySelector('#term-output');
-    const welcome = isRu ? '\u041f\u0440\u0438\u0432\u0435\u0442. \u0412\u0432\u0435\u0434\u0438 help \u0434\u043b\u044f \u0441\u043f\u0438\u0441\u043a\u0430 \u043a\u043e\u043c\u0430\u043d\u0434.' : 'Hi. Type help for available commands.';
+    const welcome = 'Hi. Type help for available commands.';
     output.innerHTML = '<span class="out">' + welcome + '</span>\n';
     input.focus();
 
@@ -458,7 +445,7 @@ function initTerminal() {
         if (result === '__EXIT__') { destroy(); return; }
         output.innerHTML += '<span class="out">' + result + '</span>\n';
       } else {
-        const msg = isRu ? '\u041d\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u0430\u044f \u043a\u043e\u043c\u0430\u043d\u0434\u0430. \u0412\u0432\u0435\u0434\u0438 help.' : 'Unknown command. Type help.';
+        const msg = 'Unknown command. Type help.';
         output.innerHTML += '<span class="out">' + msg + '</span>\n';
       }
       el.querySelector('#term-body').scrollTop = 9999;
@@ -516,13 +503,22 @@ function initEmailCopy() {
 /* --- Vanilla Badge --- */
 
 function initVanillaBadge() {
-  const p = location.pathname;
-  if (p.includes('/projects/') || p.includes('about')) return;
-
   const badge = document.createElement('div');
   badge.innerHTML =
-    '<span style="opacity:.5">0 frameworks \u00b7 0 dependencies \u00b7 vanilla everything</span>' +
-    '<span class="badge-hint" style="display:none;opacity:.35;margin-left:8px" title="Press ~ to open terminal">~</span>';
+    '<a class="badge-link" href="mailto:miacarilli@gmail.com" aria-label="Email Maria Carilli">' +
+      '<span>email</span>' +
+      '<svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>' +
+    '</a>' +
+    '<span class="badge-sep">&bull;</span>' +
+    '<a class="badge-link" href="https://www.linkedin.com/in/maria-carilli-21b107190/" target="_blank" rel="noopener" aria-label="Maria Carilli on LinkedIn">' +
+      '<span>linkedin</span>' +
+      '<svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.98H3.85v10.17h3.09V8.98ZM5.4 4.85a1.78 1.78 0 1 0 0 3.56 1.78 1.78 0 0 0 0-3.56Zm13.75 8.48c0-2.73-1.46-4-3.4-4-1.57 0-2.27.86-2.66 1.47V8.98h-3.08c.04.97 0 10.17 0 10.17h3.08v-5.68c0-.3.02-.61.11-.82.25-.61.8-1.24 1.74-1.24 1.23 0 1.72.94 1.72 2.31v5.43h3.08v-5.82h-.59Z"/></svg>' +
+    '</a>' +
+    '<span class="badge-sep">&bull;</span>' +
+    '<a class="badge-link" href="https://github.com/mtcarilli" target="_blank" rel="noopener" aria-label="Maria Carilli on GitHub">' +
+      '<span>github</span>' +
+      '<svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.22.7-3.9-1.38-3.9-1.38-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.29-5.27-5.72 0-1.26.45-2.3 1.2-3.1-.12-.3-.52-1.48.11-3.07 0 0 .98-.31 3.17 1.18A10.94 10.94 0 0 1 12 6.07c.98 0 1.95.13 2.86.39 2.18-1.49 3.16-1.18 3.16-1.18.64 1.59.24 2.77.12 3.07.75.8 1.2 1.84 1.2 3.1 0 4.45-2.7 5.43-5.28 5.72.42.36.79 1.07.79 2.16v3.01c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>' +
+    '</a>';
 
   badge.style.cssText =
     'position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(20px);' +
@@ -530,8 +526,19 @@ function initVanillaBadge() {
     'color:#999;background:rgba(255,255,255,.55);padding:8px 16px;border-radius:6px;' +
     '-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);' +
     'border:1px solid rgba(0,0,0,.06);' +
-    'pointer-events:auto;white-space:nowrap;' +
+    'pointer-events:auto;white-space:nowrap;display:flex;align-items:center;gap:10px;' +
     'transition:all .3s;z-index:1;cursor:default;opacity:0';
+
+  badge.querySelectorAll('.badge-link').forEach((link) => {
+    link.style.cssText =
+      'display:inline-flex;align-items:center;gap:5px;color:inherit;text-decoration:none;opacity:.7;transition:opacity .2s,color .2s';
+    link.addEventListener('mouseenter', () => { link.style.opacity = '1'; link.style.color = 'var(--accent)'; });
+    link.addEventListener('mouseleave', () => { link.style.opacity = '.7'; link.style.color = 'inherit'; });
+  });
+
+  badge.querySelectorAll('.badge-sep').forEach((sep) => {
+    sep.style.cssText = 'opacity:.35';
+  });
 
   document.body.appendChild(badge);
 
@@ -548,8 +555,6 @@ function initVanillaBadge() {
       ? (isDark ? 'rgba(40,40,40,1)' : 'rgba(255,255,255,1)')
       : (isDark ? 'rgba(40,40,40,.55)' : 'rgba(255,255,255,.55)');
     badge.style.color = hot ? (isDark ? '#fff' : '#000') : '#999';
-    const hint = badge.querySelector('.badge-hint');
-    if (hint) hint.style.display = hot ? 'inline' : 'none';
   });
 }
 
@@ -633,14 +638,11 @@ function initNavActive() {
   const path = location.pathname.replace(/\/+$/, '') || '/';
   links.forEach(a => {
     const href = a.getAttribute('href');
-    const isProjects = href === '.' || href === './' || href === '../' || href === '/' || href === '';
-    const isAbout = /about/i.test(href);
-    const isRadar = /radar/i.test(href);
-    if ((path.includes('/projects/') || path === '/' || path === '') && isProjects) {
+    const target = new URL(href || '.', location.href).pathname.replace(/\/+$/, '') || '/';
+    const isHome = target === '/' || target.endsWith('/index.html');
+    if ((path.includes('/projects/') || path === '/' || path.endsWith('/index.html')) && isHome) {
       a.classList.add('active');
-    } else if (path.includes('/about') && isAbout) {
-      a.classList.add('active');
-    } else if (path.includes('/radar') && isRadar) {
+    } else if (path === target) {
       a.classList.add('active');
     }
   });
@@ -790,14 +792,16 @@ function initThemeToggle() {
   if (stored === 'dark') root.classList.add('dark');
   else if (stored === 'light') root.classList.add('light');
 
-  const navLang = document.querySelector('.nav-lang');
-  if (!navLang) return;
+  const navActions = document.querySelector('.nav-actions');
+  if (!navActions) return;
 
   const btn = document.createElement('button');
   btn.className = 'theme-toggle';
   btn.setAttribute('aria-label', 'Toggle dark mode');
-  btn.innerHTML = '<span class="icon-moon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg></span><span class="icon-sun">\u2600</span>';
-  navLang.prepend(btn);
+  btn.innerHTML =
+    '<span class="icon-moon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.2 8.2 0 0 1 9.5 3.5a8.7 8.7 0 1 0 11 11Z"/></svg></span>' +
+    '<span class="icon-sun" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>';
+  navActions.appendChild(btn);
 
   const mobileNav = document.querySelector('.nav-mobile');
   if (mobileNav) {
