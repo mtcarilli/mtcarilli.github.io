@@ -315,11 +315,13 @@ button {
 
 .main--home {
   position: relative;
-  overflow: hidden;
-  min-height: calc(100vh - var(--nav-height));
+  overflow: visible;
+  min-height: max(calc(100vh - var(--nav-height)), 133.333vw);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .home-photo {
@@ -342,10 +344,11 @@ button {
 }
 
 .home-intro {
-  position: relative;
+  position: sticky;
+  top: calc(var(--nav-height) + 34vh);
   z-index: 1;
   max-width: 720px;
-  margin: 0;
+  margin: 34vh 0 120px;
   padding: 20px 26px 24px;
   text-align: left;
   background: rgba(255, 255, 255, 0.72);
