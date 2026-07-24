@@ -518,16 +518,21 @@ function initVanillaBadge() {
     '<a class="badge-link" href="https://github.com/mtcarilli" target="_blank" rel="noopener" aria-label="Maria Carilli on GitHub">' +
       '<span>github</span>' +
       '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.22.7-3.9-1.38-3.9-1.38-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.29-5.27-5.72 0-1.26.45-2.3 1.2-3.1-.12-.3-.52-1.48.11-3.07 0 0 .98-.31 3.17 1.18A10.94 10.94 0 0 1 12 6.07c.98 0 1.95.13 2.86.39 2.18-1.49 3.16-1.18 3.16-1.18.64 1.59.24 2.77.12 3.07.75.8 1.2 1.84 1.2 3.1 0 4.45-2.7 5.43-5.28 5.72.42.36.79 1.07.79 2.16v3.01c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>' +
+    '</a>' +
+    '<span class="badge-sep">&bull;</span>' +
+    '<a class="badge-link" href="https://scholar.google.com/citations?user=LTXNg8IAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Maria Carilli on Google Scholar">' +
+      '<span>gs</span>' +
+      '<img src="/assets/img/google-scholar.png" alt="" width="16" height="16" style="display:block;width:16px;height:16px;object-fit:contain;">' +
     '</a>';
 
   badge.style.cssText =
-    'position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(20px);' +
+    'position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(0);' +
     'font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;' +
-    'color:#999;background:rgba(255,255,255,.55);padding:11px 20px;border-radius:8px;' +
+    'color:#777;background:rgba(255,255,255,.72);padding:11px 20px;border-radius:8px;' +
     '-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);' +
     'border:1px solid rgba(0,0,0,.06);' +
     'pointer-events:auto;white-space:nowrap;display:flex;align-items:center;gap:14px;' +
-    'transition:all .3s;z-index:1;cursor:default;opacity:0';
+    'transition:background .3s,color .3s;z-index:1;cursor:default;opacity:1';
 
   badge.querySelectorAll('.badge-link').forEach((link) => {
     link.style.cssText =
@@ -542,19 +547,14 @@ function initVanillaBadge() {
 
   document.body.appendChild(badge);
 
-  setTimeout(() => {
-    badge.style.opacity = '1';
-    badge.style.transform = 'translateX(-50%) translateY(0)';
-  }, 2000);
-
   document.addEventListener('mousemove', (e) => {
     const hot = e.clientY > window.innerHeight - 80;
     const isDark = document.documentElement.classList.contains('dark') ||
       (!document.documentElement.classList.contains('light') && window.matchMedia('(prefers-color-scheme: dark)').matches);
     badge.style.background = hot
       ? (isDark ? 'rgba(40,40,40,1)' : 'rgba(255,255,255,1)')
-      : (isDark ? 'rgba(40,40,40,.55)' : 'rgba(255,255,255,.55)');
-    badge.style.color = hot ? (isDark ? '#fff' : '#000') : '#999';
+      : (isDark ? 'rgba(40,40,40,.72)' : 'rgba(255,255,255,.72)');
+    badge.style.color = hot ? (isDark ? '#fff' : '#000') : '#777';
   });
 }
 

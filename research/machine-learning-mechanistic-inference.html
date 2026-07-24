@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=research-columns">
+  <link rel="stylesheet" href="../styles.css?v=about-photo-top">
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
@@ -28,8 +28,38 @@
   <main class="main main--research-detail">
     <a class="research-back" href="../research.html">&larr; Research</a>
     <h1>Machine Learning for Mechanistic Inference</h1>
-    <p>This page is a placeholder for an overview of this research area, selected papers, figures, code, and downloadable materials.</p>
+
+    <section class="paper-list" aria-label="Selected papers">
+      <article class="research-paper">
+        <div class="paper-year">2024</div>
+        <div class="paper-content">
+          <h2>
+            <a href="https://www.nature.com/articles/s41592-024-02365-9" target="_blank" rel="noopener">
+              Biophysical Modeling with Variational Autoencoders for Bimodal, Single-cell Data
+            </a>
+          </h2>
+          <div class="paper-abstract">
+            <p><strong>Abstract:</strong> Here we present biVI, which combines the variational autoencoder framework of scVI with biophysical models describing the transcription and splicing kinetics of RNA molecules. We demonstrate on simulated and experimental single-cell RNA sequencing data that biVI retains the variational autoencoder's ability to capture cell type structure in a low-dimensional space while further enabling genome-wide exploration of the biophysical mechanisms, such as system burst sizes and degradation rates, that underlie observations.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="research-paper">
+        <div class="paper-year">2024</div>
+        <div class="paper-content">
+          <h2>
+            <a href="https://www.cell.com/biophysj/fulltext/S0006-3495(24)00314-X" target="_blank" rel="noopener">
+              Spectral Neural Approximations for Models of Transcriptional Dynamics
+            </a>
+          </h2>
+          <p class="paper-note"><em>This study implemented a strategy for approximating intractable distributions that are solutions to biophysical models of transcription using a set of basis functions with neural network learned weights.</em></p>
+          <div class="paper-abstract">
+            <p><strong>Abstract:</strong> The advent of high-throughput transcriptomics provides an opportunity to advance mechanistic understanding of transcriptional processes and their connections to cellular function at an unprecedented, genome-wide scale. These transcriptional systems, which involve discrete stochastic events, are naturally modeled using chemical master equations (CMEs), which can be solved for probability distributions to fit biophysical rates that govern system dynamics. While CME models have been used as standards in fluorescence transcriptomics for decades to analyze single-species RNA distributions, there are often no closed-form solutions to CMEs that model multiple species, such as nascent and mature RNA transcript counts. This has prevented the application of standard likelihood-based statistical methods for analyzing high-throughput, multi-species transcriptomic datasets using biophysical models. Inspired by recent work in machine learning to learn solutions to complex dynamical systems, we leverage neural networks and statistical understanding of system distributions to produce accurate approximations to a steady-state bivariate distribution for a model of the RNA life cycle that includes nascent and mature molecules. The steady-state distribution to this simple model has no closed-form solution and requires intensive numerical solving techniques: our approach reduces likelihood evaluation time by several orders of magnitude. We demonstrate two approaches, whereby solutions are approximated by 1) learning the weights of kernel distributions with constrained parameters or 2) learning both weights and scaling factors for parameters of kernel distributions. We show that our strategies, denoted by kernel weight regression and parameter-scaled kernel weight regression, respectively, enable broad exploration of parameter space and can be used in existing likelihood frameworks to infer transcriptional burst sizes, RNA splicing rates, and mRNA degradation rates from experimental transcriptomic data.</p>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
-  <script src="../script.js?v=runner-large"></script>
+  <script src="../script.js?v=runner-now"></script>
 </body>
 </html>

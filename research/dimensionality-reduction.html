@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=research-columns">
+  <link rel="stylesheet" href="../styles.css?v=about-photo-top">
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
@@ -28,8 +28,37 @@
   <main class="main main--research-detail">
     <a class="research-back" href="../research.html">&larr; Research</a>
     <h1>Dimensionality Reduction</h1>
-    <p>This page is a placeholder for an overview of this research area, selected papers, figures, code, and downloadable materials.</p>
+
+    <section class="paper-list" aria-label="Selected papers">
+      <article class="research-paper">
+        <div class="paper-year">2025</div>
+        <div class="paper-content">
+          <h2>
+            <a href="https://www.biorxiv.org/content/10.1101/2025.11.19.689125v1.full" target="_blank" rel="noopener">
+              The Rayleigh Quotient and Contrastive Principal Component Analysis I
+            </a>
+          </h2>
+          <div class="paper-abstract">
+            <p><strong>Abstract:</strong> Contrastive learning methods can be powerful tools for genomics, enabling the identification of signals in an experiment via dimension reduction while reducing noise using a control. One such popular approach is contrastive PCA, which, despite being used in a variety of settings, does not scale to large datasets. We show that the contrastive PCA objective is an approximation of a Rayleigh quotient, analogous in form to Fisher's linear discriminant analysis and the common spatial patterns method. The Rayleigh quotient is rhoPCA, satisfies numerous desirable properties, and provides an interpretable form of dimension reduction via generalized eigenvectors. We demonstrate that rhoPCA is more accurate than contrastive PCA and much more efficient. We also show how it can be used not only for dimension reduction of data with respect to a control, but also for contrasting conditions via an analysis of single-nucleus transcriptomics data. Finally, we discuss probabilistic interpretations of rhoPCA that provide further insight into its effective performance.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="research-paper">
+        <div class="paper-year">2026</div>
+        <div class="paper-content">
+          <h2>
+            <a href="https://www.biorxiv.org/content/10.64898/2026.04.08.717236v" target="_blank" rel="noopener">
+              The Rayleigh Quotient and Principal Component Analysis II
+            </a>
+          </h2>
+          <div class="paper-abstract">
+            <p><strong>Abstract:</strong> Contrastive principal component analysis (PCA) methods are effective approaches to dimensionality reduction where variance of a target dataset is maximized while variance of a background dataset is minimized. We previously described how contrastive PCA problems can be written as solutions to generalized eigenvalue problems that maximize particular instantiations of the Rayleigh quotient. Here, we discuss two extensions of contrastive PCA: we use kernel weighting from spatial PCA (k-rhoPCA) to contrast spatial and non-spatial axes of variation, and separately solve the Rayleigh quotient in the space of basis function coefficients (f-rhoPCA) to find modes of variation in functional data. Together, these extensions expand the scope of contrastive PCA while unifying disparate fields of spatial and functional methods within a single conceptual and mathematical framework. We showcase the utility of these extensions with several examples drawn from genomics, analyzing gene expression in cancer and immune response to vaccination.</p>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
-  <script src="../script.js?v=runner-large"></script>
+  <script src="../script.js?v=runner-now"></script>
 </body>
 </html>
