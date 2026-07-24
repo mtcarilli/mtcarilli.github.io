@@ -315,21 +315,20 @@ button {
 
 .main--home {
   position: relative;
-  overflow: visible;
-  min-height: max(calc(100vh - var(--nav-height)), 133.333vw);
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 0;
-  padding-bottom: 0;
+  display: block;
+  height: calc(100vh - var(--nav-height));
+  max-width: none;
+  flex: 0 0 calc(100vh - var(--nav-height));
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .home-photo {
-  position: absolute;
-  top: 0;
-  left: 50%;
+  position: relative;
   width: 100vw;
-  transform: translateX(-50%);
+  margin-left: calc(50% - 50vw);
   pointer-events: none;
   z-index: 0;
 }
@@ -344,11 +343,14 @@ button {
 }
 
 .home-intro {
-  position: sticky;
+  position: fixed;
   top: calc(var(--nav-height) + 34vh);
+  left: max(var(--side-padding), calc((100vw - var(--content-max)) / 2 + var(--side-padding)));
+  right: auto;
   z-index: 1;
   max-width: 720px;
-  margin: 34vh 0 120px;
+  width: fit-content;
+  margin: 0;
   padding: 20px 26px 24px;
   text-align: left;
   background: rgba(255, 255, 255, 0.72);
