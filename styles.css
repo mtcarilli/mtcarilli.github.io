@@ -816,6 +816,14 @@ html.dark .paper-abstract {
   margin-top: 80px;
 }
 
+.misc-placeholder {
+  margin-top: 24px;
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 24px;
+  line-height: 1.35;
+}
+
 .project-list {
   display: flex;
   flex-direction: column;
